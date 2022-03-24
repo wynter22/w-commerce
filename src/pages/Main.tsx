@@ -1,13 +1,14 @@
 import React from 'react';
-import TextField from '@mui/material/TextField';
-import { Container } from '@mui/material';
+import Header from 'components/common/main/Header';
+import Content from 'components/common/main/Content';
 
 const Main = () => {
   return (
     <>
-      <Container>
-        <TextField color="primary" focused />
-      </Container>
+      <div className="layout">
+        <Header />
+        <Content />
+      </div>
     </>
   );
 };
