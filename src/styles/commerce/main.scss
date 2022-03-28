@@ -1,0 +1,26 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 80px;
+}
+
+.navigator {
+  height: 50px;
+}
+
+.topbar,
+.navigator {
+  border-bottom: 1px solid #ededed;
+
+  &__content {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
