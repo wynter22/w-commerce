@@ -1,30 +1,19 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
+import MenuState from 'store/menu';
 
-const header = () => {
+const Header = () => {
+  const [menuList] = useRecoilState(MenuState);
+
   return (
     <>
-      <header className="navigation">
-        <div className="navigation-primary">
-          <div className="navigation-primary__content">
-            <div>Logo</div>
-            <div>Menu</div>
-            <div className="navigation-primary__right">
-              NavigationBar :<div>SearchBar</div>
-              <div>|NavigationBar</div>
-              <div>|UploadButton</div>
-            </div>
-          </div>
-        </div>
-        <div className="navigation-secondary">
-          <div className="navigation-secondary__content">
-            <div>menu1</div>
-            <div>menu2</div>
-            <div>menu3</div>
-          </div>
-        </div>
+      <header className="">
+        {menuList.map(menu => (
+          <div key={menu.id}>{menu.name}</div>
+        ))}
       </header>
     </>
   );
 };
 
-export default header;
+export default Header;
