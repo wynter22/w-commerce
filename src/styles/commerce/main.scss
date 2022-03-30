@@ -17,10 +17,36 @@
 
   &__content {
     height: 100%;
-    margin: 0 auto;
     max-width: 1024px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+
+    &-left,
+    &-right {
+      display: flex;
+      flex-direction: row;
+      padding: 10px 20px;
+    }
+
+    &-left {
+      justify-content: flex-start;
+    }
+
+    &-right {
+      justify-content: flex-end;
+    }
+
+    nav {
+      padding-left: 20px;
+
+      a + a {
+        padding-left: 10px;
+      }
+    }
+    div + div {
+      padding-left: 20px;
+    }
   }
 }
