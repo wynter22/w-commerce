@@ -7,8 +7,10 @@ const Content = () => {
   const [contents, setContents] = useState<any[]>([]);
 
   useEffect(() => {
-    setContents([{ text: 'test', price: '1000원', imgUrl: '' }]);
-    setLoading(false);
+    setTimeout(() => {
+      setContents([{ text: 'test', price: '1000원', imgUrl: '' }]);
+      setLoading(true);
+    }, 1000);
   }, []);
 
   return (
