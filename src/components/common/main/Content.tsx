@@ -23,19 +23,33 @@ const Content = () => {
           </div>
           <div className="content_item">
             <ul>
-              {isLoading ? (
-                <>
-                  {contents.map(item => (
-                    <>
-                      <img src={item.imgUrl} alt="" />
-                    </>
-                  ))}
-                </>
-              ) : (
-                new Array(12).fill(1).map((_, i) => {
-                  return <Skeleton key={i} />;
-                })
-              )}
+              {isLoading
+                ? contents.map((item, i) => (
+                    <li className="prod_item" key={i}>
+                      <div className="prod_img">
+                        <img
+                          src="https://picsum.photos/seed/picsum/241/241"
+                          loading="lazy"
+                          alt=""
+                        />
+                      </div>
+                      <div className="prod_info">
+                        <p className="prod_title">{item.text}</p>
+                        <p className="prod_price">{item.price}</p>
+                      </div>
+                    </li>
+                  ))
+                : new Array(12).fill(1).map((_, i) => {
+                    return (
+                      <li className="prod_item skeleton" key={`skeleton_${i}`}>
+                        <div className="prod_img"></div>
+                        <div className="prod_info">
+                          <p className="prod_title" />
+                          <p className="prod_price" />
+                        </div>
+                      </li>
+                    );
+                  })}
             </ul>
           </div>
         </div>

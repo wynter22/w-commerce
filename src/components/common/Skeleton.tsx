@@ -1,13 +1,12 @@
 import React from 'react';
-import 'styles/commerce/skeleton.scss';
 
 const Skeleton = () => {
   return (
-    <li className="skeleton-item">
-      <div className="skeleton-img"></div>
-      <div className="skeleton-info">
-        <p className="skeleton-info-name" />
-        <p className="skeleton-info-email" />
+    <li className="prod_item skeleton">
+      <div className="prod_img"></div>
+      <div className="prod_info">
+        <p className="prod_title" />
+        <p className="prod_price" />
       </div>
     </li>
   );
