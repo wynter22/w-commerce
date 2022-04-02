@@ -1,0 +1,67 @@
+// @import '../mixin';
+
+// @include keyframe(loading) {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   50%,
+//   100% {
+//     transform: translateX(241px);
+//   }
+// }
+
+.skeleton-item {
+  flex-direction: column;
+  margin: 0 0 23px 23px;
+  position: relative;
+  flex-basis: 241px;
+}
+
+.skeleton-img {
+  width: 241px;
+  height: 241px;
+  border-radius: 10px;
+  background: #f2f2f2;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &-name {
+    width: 70%;
+    height: 18px;
+    background: #f2f2f2;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+
+  &-email {
+    width: 50%;
+    height: 18px;
+    background: #f2f2f2;
+    margin-top: 3px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+}
+
+// .skeleton-info-name,
+// .skeleton-info-email {
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 30px;
+//     height: 100%;
+//     background: linear-gradient(to right, #f2f2f2, #ddd, #f2f2f2);
+//     animation: loading 2s infinite linear;
+//   }
+// }
