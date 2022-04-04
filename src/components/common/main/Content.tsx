@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Skeleton from 'components/common/Skeleton';
 import 'styles/commerce/content.scss';
+import { Link } from 'react-router-dom';
 
 const Content = () => {
   const [isLoading, setLoading] = useState(false);
@@ -8,7 +8,11 @@ const Content = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setContents([{ text: 'test', price: '1000원', imgUrl: '' }]);
+      setContents([
+        { id: 10001, text: 'test', price: '1000원', imgUrl: '' },
+        { id: 10002, text: 'test', price: '1000원', imgUrl: '' },
+        { id: 10003, text: 'test', price: '1000원', imgUrl: '' },
+      ]);
       setLoading(true);
     }, 1000);
   }, []);
@@ -26,17 +30,18 @@ const Content = () => {
               {isLoading
                 ? contents.map((item, i) => (
                     <li className="prod_item" key={i}>
-                      <div className="prod_img">
-                        <img
-                          src="https://picsum.photos/seed/picsum/241/241"
-                          loading="lazy"
-                          alt=""
-                        />
-                      </div>
-                      <div className="prod_info">
-                        <p className="prod_title">{item.text}</p>
-                        <p className="prod_price">{item.price}</p>
-                      </div>
+                      <Link to={`product/${item.id}`}>
+                        <div className="prod_img">
+                          <img
+                            src="https://picsum.photos/seed/picsum/241/241"
+                            alt=""
+                          />
+                        </div>
+                        <div className="prod_info">
+                          <p className="prod_title">{item.text}</p>
+                          <p className="prod_price">{item.price}</p>
+                        </div>
+                      </Link>
                     </li>
                   ))
                 : new Array(12).fill(1).map((_, i) => {
