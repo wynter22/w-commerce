@@ -1,7 +1,11 @@
-import InputText from 'components/atoms/InputText';
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import MenuState from 'store/menu';
+import InputText from 'components/atoms/InputText';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper';
+
+import 'styles/commerce/swiper.scss';
 
 const Header = () => {
   const [menuList] = useRecoilState(MenuState);
@@ -44,6 +48,28 @@ const Header = () => {
               })}
             </div>
           </div>
+        </div>
+        <div style={{ height: '400px' }}>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {new Array(4).fill(1).map((_, idx) => (
+              <SwiperSlide key={idx}>
+                <img
+                  src={`https://picsum.photos/1500/300?random=${idx}`}
+                  alt=""
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </header>
     </>
