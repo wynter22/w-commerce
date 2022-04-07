@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil';
 import MenuState from 'store/menu';
 import InputText from 'components/atoms/InputText';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper';
+import { Pagination, Navigation, Autoplay } from 'swiper';
 
 import 'styles/commerce/swiper.scss';
 
@@ -58,7 +58,8 @@ const Header = () => {
               clickable: true,
             }}
             navigation={true}
-            modules={[Pagination, Navigation]}
+            autoplay={{ disableOnInteraction: true }}
+            modules={[Pagination, Navigation, Autoplay]}
             className="mySwiper"
           >
             {new Array(4).fill(1).map((_, idx) => (
