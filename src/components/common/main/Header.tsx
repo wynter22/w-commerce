@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper';
 
 import 'styles/commerce/swiper.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [menuList] = useRecoilState(MenuState);
@@ -31,7 +32,7 @@ const Header = () => {
                 <InputText value={searchValue} updateValue={setSearchValue} />
               </div>
               <div>
-                <button type="button">로그인</button>
+                <Link to="login">로그인</Link>
               </div>
             </div>
           </div>
