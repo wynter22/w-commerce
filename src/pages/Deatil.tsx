@@ -13,9 +13,9 @@ const Detail = (props: any) => {
             <span>{`navigator > navigator > navigator`}</span>
           </div>
           <img
-            src="http://via.placeholder.com/600x600"
-            width={600}
-            height={600}
+            src="http://via.placeholder.com/400x400"
+            width={400}
+            height={400}
           />
           <div>
             <div>partner</div>
